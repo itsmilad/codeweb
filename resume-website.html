@@ -1,0 +1,313 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>codeweb</title>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css" media="screen"> -->
+  <style>
+  * {
+      box-sizing: border-box;
+  }
+  body {
+      background: #EDEDED;
+      margin:0;
+      font-family: "@Microsoft JhengHei Light";
+  }
+
+  nav {
+      //border: 1px solid hotpink;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      width: 100%;
+      top:0; left:0;
+      font-family: "@Microsoft JhengHei Light";
+      z-index:1
+  }
+
+  nav ul {
+      //border: 1px dotted hotpink;
+      list-style-type: none;
+      background-color: #121212;
+      margin:0; padding:0;
+      overflow: hidden;
+      width: 100%;
+      box-shadow: 0 3px 10px 0 #5E5E5E;
+      opacity: .8;
+  }
+  nav li {
+      float: left;
+  }
+  nav li a {
+      display: block;
+      text-decoration: none;
+      padding: 20px 25px;
+      color: white;
+      transition: 0.2s;
+  }
+  nav a.active {
+    background: #333399;
+    color:white;
+  }
+
+  nav li a:hover {
+      background: #000000;
+  }
+  nav input[type=search] {
+      //border: 1px solid red;
+      padding: 5px 10px;
+      position: absolute;
+      background: #D9D9D9;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border: none;
+      border-radius: 3px;
+      right: 80px;
+  }
+  nav button {
+      border: none;
+      border-radius: 3px;
+      padding:5px 10px;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 10px;
+      background: #4791FF;
+      color: white;
+  }
+  .dropdown {
+     position: relative;
+     display: inline-block;
+   }
+  .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #3D3D3D;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+   }
+   .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+   [class*="col-"] {
+    float: left;
+    padding: 10px;
+    }
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+  /* Clear floats after the columns */
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+
+  }
+  .row {
+      max-width: 1024px;
+      margin: auto;
+      margin-top: 20px;
+      //border:2px dotted black;
+  }
+  .frow {
+      background:#D4D4D4;
+      max-width:100%;
+      margin-top:0;
+      padding:20px;
+    }
+
+  @media (max-width: 600px) {
+    .col-4, .col-6 {
+        width: 100%;
+    }
+  }
+  .tab {
+     //border:1px solid red;
+      margin: auto;
+      border-radius: 5px;
+      background: #E6E6E6;
+      text-align: center;
+  }
+  .tab a {
+      font-family: "@Microsoft JhengHei Light";
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      padding: 5px 10px;
+      transition: .3s;
+  }
+  .tab a:hover {
+      background: #BFBFBF;
+  }
+
+  .card {
+      //border: 1px solid hotpink;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 4px 4px 20px 0 #969696;
+      background: white;
+      margin-top: 20px;
+      padding: 0;
+      transition: .3s;
+  }
+  .card:hover {
+      box-shadow: 1px 1px 10px 0 #C7C7C7;
+
+  }
+  .container {
+      position:relative;
+     //border: 1px solid yellow;
+  }
+  .overtext {
+      position: absolute;
+      color:white;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      background: #FF0A47;
+  }
+
+  .leftskew {
+      -ms-transform: skewY(-1deg); /* IE 9 */
+      transform: skewY(-1deg);
+      box-shadow: -8px 2px 15px 0 #B5B5B5;
+  }
+  .rightskew {
+      -ms-transform: skewY(1deg); /* IE 9 */
+      transform: skewY(1deg);
+       box-shadow: 8px 2px 15px 0 #B5B5B5;
+  }
+
+  img {
+      width: 100%;
+      display: block;
+      margin: 0;
+  }
+  .pag {
+      //border: 1px solid red;
+      text-align: center;
+  }
+  .pag a {
+      text-decoration: none;
+      display: inline-block;
+      width: 40px; height: 40px;
+      text-align: center;
+      padding: 8px;
+      border-radius: 50%;
+      color: white;
+      background: #5B5BAC;
+      transition: .3s;
+      margin-top: 40px;
+  }
+  .pag a:hover {
+      background: #3F3F7D;
+  }
+
+  .footer {
+      background-color: #212121;
+      color:white;
+      text-align:center;
+      padding:100px;
+      margin-top: 20px;
+
+  }
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li> <a style="font-family:'Segoe Print';font-size:12px;color:#6666FF" href="#">codeweb</a></li>
+        <li> <a class="active" href="#">Home</a> </li>
+        <li> <a href="#">Tech</a> </li>
+        <li class="dropdown">
+            <a href="#">Game</a>
+            <div class="dropdown-content">
+                <a href="#">Game</a>
+                <a href="#">Game</a>
+                <a href="#">Game</a>
+            </div>
+        </li>
+        <li> <a href="#">Video</a> </li>
+        <li> <a href="#">Contact</a> </li>
+        <input type="search" id="search" placeholder="search...">
+        <button type="button">Log in</button>
+    </ul>
+</nav>
+<div class="row frow">
+     <div class="col-6">
+         <div class="container">
+            <img src="img/bg1.jpg">
+            <div class="overtext">
+                JAVASCRIPS
+            </div>
+         </div>
+
+     </div>
+     <div class="col-6">
+         <div class="container">
+            <img src="img/bg2.jpg">
+            <div class="overtext">
+                Python
+            </div>
+         </div>
+     </div>
+</div>
+
+<div class="tab">
+    <a href="#">UI/UX</a>
+    <a href="#">CSS</a>
+    <a href="#">Javascript</a>
+    <a href="#">Python</a>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="card "> <img src="img/card1.PNG"> </div>
+        <div class="card "> <img src="img/card4.PNG"> </div>
+    </div>
+    <div class="col-3">
+        <div class="card"> <img src="img/card2.PNG"> </div>
+        <div class="card"><img src="img/card1.PNG"> </div>
+    </div>
+    <div class="col-3">
+      <div class="card "> <img src="img/card3.PNG"> </div>
+    </div>
+    <div class="col-3">
+        <div class="card"> <img src="img/card2.PNG"> </div>
+        <div class="card"><img src="img/card1.PNG"> </div>
+    </div>
+</div>
+
+<div class="pag">
+    <a href="#"><</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">></a>
+</div>
+
+<div class="footer">
+    <h1>FOOTER</h1>
+</div>
+</body>
+
+</html>
